@@ -35,12 +35,13 @@ public class ThreadTest {
 		running = false;
 	}
 	
-	public static void start(Integer maxThreds,Long times){
+	public static void start(Integer maxThreads,Long times){
 		if(!running){
 			running = true;
 			counter = new Counter();
+			counter.setMaxThreads(maxThreads);
 			counter.setStartTime(new Timestamp(System.currentTimeMillis()));
-			for(int i=0;i<maxThreds;i++){
+			for(int i=0;i<maxThreads;i++){
 				new Thread(new SingleThread(counter, null)).start();
 			}
 			
