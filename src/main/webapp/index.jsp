@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>压力测试</title>
 <style type="text/css">
 body,button,input{
 	font-size: 20px;
