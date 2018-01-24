@@ -5,20 +5,29 @@
 String _maxThreads = request.getParameter("maxThreads");
 ThreadTest.start(Integer.valueOf(_maxThreads), null);
 %>
-测试进行中...
+<h1>测试进行中...</h1>
 <%
 out.print(ThreadTest.counter.toString());
 %>
-
-<script type="text/javascript">
-	setTimeout(refulsh() ,2000);
-	
-	function refulsh() {
-		window.location.herf = "/start.jsp";
-	}
-</script>
-
+<!DOCTYPE script PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
 
 <form action="stop.jsp">
 	<button type="submit">停止</button>
 </form>
+
+<script type="text/javascript">
+	setTimeout("gotoRunning()" ,2000);
+	
+	function gotoRunning(){
+		window.location.href = '/running.jsp';
+	}
+</script>
+
+
+
+</body>
+</html>
+
+

@@ -4,11 +4,8 @@
 <%
 	ThreadTest.stop();
 %>
-测试已停止...
+
+<h1>测试已停止...</h1>
 <script type="text/javascript">
-	setTimeout(back() ,2000);
-	
-	function back() {
-		window.location.herf = "/index.jsp";
-	}
+	setTimeout("window.location.href = '/index.jsp'" ,2000);
 </script>

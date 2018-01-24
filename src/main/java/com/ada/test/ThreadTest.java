@@ -1,5 +1,6 @@
 package com.ada.test;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -35,33 +36,41 @@ public class ThreadTest {
 	}
 	
 	public static void start(Integer maxThreds,Long times){
-		running = true;
-		counter = new Counter();
-		
-		Long startTime = System.currentTimeMillis();
-		
-		for(int i=0;i<maxThreds;i++){
-			new Thread(new SingleThread(counter, null)).start();
-		}
-		
-		while(running){
-			Long now = System.currentTimeMillis();
-			Long senkds = (now-startTime)/1000;
-			Long s = 0l;
-			
-			try {
-				s = counter.getSuccess().get()/senkds;
-			} catch (Exception e) {
-				// TODO: handle exception
+		if(!running){
+			running = true;
+			counter = new Counter();
+			counter.setStartTime(new Timestamp(System.currentTimeMillis()));
+			for(int i=0;i<maxThreds;i++){
+				new Thread(new SingleThread(counter, null)).start();
 			}
 			
-			log.info(counter +",美妙"+s+"个");
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			consoleLog();
 		}
+	}
+	
+	public static void consoleLog(){
+		new Thread(new Runnable() {
+			public void run() {
+				while(running){
+					Long now = System.currentTimeMillis();
+					Long senkds = (now-counter.getStartTime().getTime())/1000;
+					Long s = 0l;
+					
+					try {
+						s = counter.getSuccess().get()/senkds;
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					
+					log.info(counter +",美妙"+s+"个");
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}).start();
 	}
 	
 	public static class SingleThread implements Runnable {

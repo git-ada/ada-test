@@ -1,9 +1,13 @@
 package com.ada.test;
 
+import java.sql.Timestamp;
 import java.util.concurrent.atomic.AtomicLong;
+
 
 public class Counter {
 
+	private Timestamp startTime;
+	
 	private AtomicLong total = new AtomicLong();
 	private AtomicLong success = new AtomicLong();
 	private AtomicLong faild = new AtomicLong();
@@ -40,5 +44,11 @@ public class Counter {
 	@Override
 	public String toString() {
 		return "Counter [total=" + total + ", success=" + success + ", faild=" + faild + "]";
+	}
+	public Timestamp getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(Timestamp startTime) {
+		this.startTime = startTime;
 	}
 }

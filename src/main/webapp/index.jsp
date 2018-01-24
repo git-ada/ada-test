@@ -6,20 +6,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-body button input{
+body,button,input{
 	font-size: 20px;
 }
-
 </style>
 </head>
 <body>
 <% if(ThreadTest.running){%>
 <script type="text/javascript">
-	window.location.herf = "/start.jsp";
+	window.location.href = "/running.jsp";
 </script>
 <%} else{ %>
-
-	<form action="stop.jsp">
+	
+	<h1>开始测试：</h1>
+	<br/>
+	<br/>
+	<form action="start.jsp">
 		进程数 <input name="maxThreads" >
 		<button type="submit">开始</button>
 	</form>
