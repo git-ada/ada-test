@@ -63,7 +63,7 @@ public class ThreadTest {
 						// TODO: handle exception
 					}
 					
-					log.info(counter +",美妙"+s+"个");
+					log.info(counter);
 					try {
 						Thread.sleep(2000);
 					} catch (InterruptedException e) {
