@@ -104,11 +104,12 @@ public class ThreadTest {
 		private void invoke() {
 			String url = "http://log.qgs.com/l1";
 			Long now = System.currentTimeMillis();
+			Timestamp time = new Timestamp(now);
 //			String body = "u=86c95270eb7f4326b9d18cafcbcf5e96&s=1000&c=&a=&e=2&v=1.1&p=http://xxx.test.com/index.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96"
 //					+ "f="+now+"o="+now+"r=http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96&os=windows&br=IE&ss=1024x768&ps=1024x768&if=0&"
 //							+ "ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
 			Map<String,String> paramMap = new LinkedHashMap<String,String>();
-			paramMap.put("u", df1.format(now));
+			paramMap.put("u", df1.format(time));
 			paramMap.put("s", "1000");
 			paramMap.put("c", "");
 			paramMap.put("a", "");
@@ -122,9 +123,9 @@ public class ThreadTest {
 			paramMap.put("r", "http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96");
 			
 			paramMap.put("os", "windows");
-			paramMap.put("br", df1.format(df1));
-			paramMap.put("ss", df1.format(df2));
-			paramMap.put("ps", df1.format(df3));
+			paramMap.put("br", df1.format(time));
+			paramMap.put("ss", df1.format(time));
+			paramMap.put("ps", df1.format(time));
 			paramMap.put("if", "0");
 			paramMap.put("ua", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
 			
