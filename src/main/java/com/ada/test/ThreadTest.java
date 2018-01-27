@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -101,7 +102,7 @@ public class ThreadTest {
 //					+ "f="+now+"o="+now+"r=http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96&os=windows&br=IE&ss=1024x768&ps=1024x768&if=0&"
 //							+ "ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
 			Map<String,String> paramMap = new LinkedHashMap<String,String>();
-			paramMap.put("u", "86c95270eb7f4326b9d18cafcbcf5e96");
+			paramMap.put("u", UUID.randomUUID().toString().replaceAll("-", ""));
 			paramMap.put("s", "1000");
 			paramMap.put("c", "");
 			paramMap.put("a", "");
