@@ -123,9 +123,9 @@ public class ThreadTest {
 			paramMap.put("r", "http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96");
 			
 			paramMap.put("os", "windows");
-			paramMap.put("br", df1.format(time));
-			paramMap.put("ss", df1.format(time));
-			paramMap.put("ps", df1.format(time));
+			paramMap.put("br", df.format(time));
+			paramMap.put("ss", df2.format(time));
+			paramMap.put("ps", df3.format(time));
 			paramMap.put("if", "0");
 			paramMap.put("ua", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
 			
