@@ -1,6 +1,7 @@
 package com.ada.test;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -95,6 +96,11 @@ public class ThreadTest {
 			//httpclient.getParams().setParameter(ConnRouteParams.DEFAULT_PROXY, proxy);  
 		}
 		
+		private SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
+		private SimpleDateFormat df1 = new SimpleDateFormat("yyyyMMddHH");
+		private SimpleDateFormat df2 = new SimpleDateFormat("yyyyMMddHHmm");
+		private SimpleDateFormat df3 = new SimpleDateFormat("yyyyMMddHHmmss");
+		
 		private void invoke() {
 			String url = "http://log.qgs.com/l1";
 			Long now = System.currentTimeMillis();
@@ -102,23 +108,23 @@ public class ThreadTest {
 //					+ "f="+now+"o="+now+"r=http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96&os=windows&br=IE&ss=1024x768&ps=1024x768&if=0&"
 //							+ "ua=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
 			Map<String,String> paramMap = new LinkedHashMap<String,String>();
-			paramMap.put("u", UUID.randomUUID().toString().replaceAll("-", ""));
+			paramMap.put("u", df1.format(now));
 			paramMap.put("s", "1000");
 			paramMap.put("c", "");
 			paramMap.put("a", "");
 			paramMap.put("e", "2");
 			paramMap.put("ep", "");
 			paramMap.put("v", "1");
-			paramMap.put("p", "http://xxx.test.com/index.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96");
+			paramMap.put("p", "http://xxx.test.com/index.html?86c95270eb7f4326b9d18cafcbcf5e"+UUID.randomUUID().toString().replaceAll("-", ""));
 			paramMap.put("o", now.toString());
 			paramMap.put("t", now.toString());
 			paramMap.put("f", now.toString());
 			paramMap.put("r", "http://xxx.test.com/referer.html?86c95270eb7f4326b9d18cafcbcf5e9686c95270eb7f4326b9d18cafcbcf5e96");
 			
 			paramMap.put("os", "windows");
-			paramMap.put("br", "IE");
-			paramMap.put("ss", "1024x768");
-			paramMap.put("ps", "1024x768");
+			paramMap.put("br", df1.format(df1));
+			paramMap.put("ss", df1.format(df2));
+			paramMap.put("ps", df1.format(df3));
 			paramMap.put("if", "0");
 			paramMap.put("ua", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
 			
