@@ -83,12 +83,15 @@ public class Counter {
 	}
 
 	public Long getAvgSeconds() {
-		Long now = System.currentTimeMillis();
-		Long t = (now-startTime.getTime())/1000;
-		try {
-			avgSeconds = success.get()/t;
-		} catch (Exception e) {
+		if(startTime!=null){
+			Long now = System.currentTimeMillis();
+			Long t = (now-startTime.getTime())/1000;
+			try {
+				avgSeconds = success.get()/t;
+			} catch (Exception e) {
+			}
 		}
+		
 		return avgSeconds;
 	}
 	@Override
