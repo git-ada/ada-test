@@ -48,19 +48,24 @@ public class BatchInsertTestCase implements TestCase {
 	
 	public static AtomicInteger error = new AtomicInteger();
 	
-	public static void start(){
+	public static void start() throws InterruptedException{
 		counter.setStartTime(new Timestamp(System.currentTimeMillis()));
 		if(!testing){
 			while(testing){
 				testing = true;
-				BatchInsertTestCase n = new BatchInsertTestCase();
-				n.beforeTest();
-				try {
-					n.test();
-				} catch (Exception e) {
-					logger.error(e);
-				}
+				new Thread(new Runnable() {
+					public void run() {
+						BatchInsertTestCase n = new BatchInsertTestCase();
+						n.beforeTest();
+						try {
+							n.test();
+						} catch (Exception e) {
+							logger.error(e);
+						}
+					}
+				}).start();
 				
+				Thread.sleep(1000);
 			}
 		}
 	}
