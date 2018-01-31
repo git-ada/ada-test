@@ -1,4 +1,5 @@
-<%@page import="com.ada.test.ThreadTest"%>
+<%@page import="com.ada.test.cases.BatchInsertTestCase"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
