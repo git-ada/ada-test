@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
@@ -48,30 +50,29 @@ public class BatchInsertTestCase implements TestCase {
 	
 	public static AtomicInteger error = new AtomicInteger();
 	
-	public static void start() throws InterruptedException{
+	private static Timer timer = new Timer();
+	
+	public static void start() {
+		logger.info("start");
 		counter.setStartTime(new Timestamp(System.currentTimeMillis()));
-		if(!testing){
-			while(testing){
-				testing = true;
-				new Thread(new Runnable() {
-					public void run() {
-						BatchInsertTestCase n = new BatchInsertTestCase();
-						n.beforeTest();
-						try {
-							n.test();
-						} catch (Exception e) {
-							logger.error(e);
-						}
-					}
-				}).start();
-				
-				Thread.sleep(1000);
+		
+		timer.schedule(new TimerTask() {
+			public void run() {
+				try {
+					BatchInsertTestCase n = new BatchInsertTestCase();
+					n.init();
+					n.beforeTest();
+					n.test();
+				} catch (Exception e) {
+					logger.error(e);
+				}
 			}
-		}
+		}, 0,1000);
+		
 	}
 	
 	public static void stop(){
-		testing = false;
+		timer.cancel();
 	}
 	
 	private void init(){
@@ -79,6 +80,8 @@ public class BatchInsertTestCase implements TestCase {
 		impl.set_host("qgs-14,qgs-17,qgs-18,qgs-19,qgs-20");
 		impl.set_port("2181");
 		dao = impl;
+		
+		counter.setStartTime(new Timestamp(System.currentTimeMillis()));
 	}
 	
 	@Override

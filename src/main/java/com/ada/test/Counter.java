@@ -96,7 +96,10 @@ public class Counter {
 	}
 	@Override
 	public String toString() {	
+//		return "Counter [startTime=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startTime) + ", maxThreads=" + maxThreads + ", total=" + total + ", success="
+//				+ success + ", faild=" + faild + ", avgSeconds=" + getAvgSeconds() + "]";
+		
 		return "Counter [startTime=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startTime) + ", maxThreads=" + maxThreads + ", total=" + total + ", success="
-				+ success + ", faild=" + faild + ", avgSeconds=" + getAvgSeconds() + "]";
+		+ success + ", faild=" + faild + ", avgSeconds=" + getAvgSeconds() + "]";
 	}
 }
