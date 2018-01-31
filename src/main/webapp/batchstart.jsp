@@ -5,7 +5,7 @@
 %>
 <h1>测试进行中...</h1>
 <%
-out.print(BatchInsertTestCase.counter.toString());
+	out.print(BatchInsertTestCase.counter.toString());
 %>
 <title>批量写入测试</title>
 
