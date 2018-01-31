@@ -116,11 +116,12 @@ public class BatchInsertTestCase implements TestCase {
 		return t;
 	};
 	
-//	public static AtomicInteger total = new AtomicInteger();
+	public static AtomicInteger total = new AtomicInteger();
 	public static Counter counter = new Counter();
 
 	public boolean test() {
 		try {
+			logger.info("batch add " + logs.size() +",total->"+total.addAndGet(logs.size()));
 			Long startTime = System.currentTimeMillis();
 			dao.batchInsert(logs);
 			Long endTime = System.currentTimeMillis();
