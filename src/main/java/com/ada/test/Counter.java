@@ -45,6 +45,17 @@ public class Counter {
 		total.incrementAndGet();
 		faild.incrementAndGet();
 	}
+	
+	
+	public void success(Integer n){
+		total.addAndGet(n);
+		success.addAndGet(n);
+	}
+	
+	public void error(Integer n){
+		total.addAndGet(n);
+		faild.addAndGet(n);
+	}
 
 	public String toString2() {
 		Long now = System.currentTimeMillis();
