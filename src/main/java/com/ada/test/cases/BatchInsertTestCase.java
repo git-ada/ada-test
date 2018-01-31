@@ -49,6 +49,7 @@ public class BatchInsertTestCase implements TestCase {
 	public static AtomicInteger error = new AtomicInteger();
 	
 	public static void start(){
+		counter.setStartTime(new Timestamp(System.currentTimeMillis()));
 		if(!testing){
 			while(testing){
 				testing = true;
