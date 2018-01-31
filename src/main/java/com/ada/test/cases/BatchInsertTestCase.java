@@ -52,27 +52,34 @@ public class BatchInsertTestCase implements TestCase {
 	
 	private static Timer timer = new Timer();
 	
+	public static void main(String[] args){
+//		BatchInsertTestCase.start();
+		System.out.println(new BatchInsertTestCase().randomInstance());
+	}
+	
 	public static void start() {
 		logger.info("start");
-		counter.setStartTime(new Timestamp(System.currentTimeMillis()));
-		
-		timer.schedule(new TimerTask() {
-			public void run() {
-				new Thread(new Runnable() {
-					public void run() {
-						try {
-							BatchInsertTestCase n = new BatchInsertTestCase();
-							n.init();
-							n.beforeTest();
-							n.test();
-						} catch (Exception e) {
-							logger.error(e);
+		if(!testing){
+			testing = true;
+			counter.setStartTime(new Timestamp(System.currentTimeMillis()));
+			timer = new Timer();
+			timer.schedule(new TimerTask() {
+				public void run() {
+					new Thread(new Runnable() {
+						public void run() {
+							try {
+								BatchInsertTestCase n = new BatchInsertTestCase();
+								n.init();
+								n.beforeTest();
+								n.test();
+							} catch (Exception e) {
+								logger.error(e);
+							}
 						}
-					}
-				}).start();
-			}
-		}, 0,1000);
-		
+					}).start();
+				}
+			}, 0,1000);
+		}
 	}
 	
 	public static void stop(){
