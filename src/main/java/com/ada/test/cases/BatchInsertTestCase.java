@@ -58,14 +58,18 @@ public class BatchInsertTestCase implements TestCase {
 		
 		timer.schedule(new TimerTask() {
 			public void run() {
-				try {
-					BatchInsertTestCase n = new BatchInsertTestCase();
-					n.init();
-					n.beforeTest();
-					n.test();
-				} catch (Exception e) {
-					logger.error(e);
-				}
+				new Thread(new Runnable() {
+					public void run() {
+						try {
+							BatchInsertTestCase n = new BatchInsertTestCase();
+							n.init();
+							n.beforeTest();
+							n.test();
+						} catch (Exception e) {
+							logger.error(e);
+						}
+					}
+				}).start();
 			}
 		}, 0,1000);
 		
