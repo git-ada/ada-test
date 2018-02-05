@@ -94,7 +94,7 @@ public class BatchInsertTestCase implements TestCase {
 //		impl.set_host("119.23.51.182,119.23.215.11,120.77.86.65");
 //		impl.set_host("39.108.0.161,39.108.79.43,120.77.253.191");
 		
-		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157:2181");
+		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157");
 		impl.set_port("2181");
 		dao = impl;
 		
