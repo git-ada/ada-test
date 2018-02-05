@@ -41,7 +41,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -109,7 +109,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -176,7 +176,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -243,7 +243,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -309,7 +309,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -376,7 +376,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));
@@ -1203,7 +1203,7 @@ public class AccessLogStateMentMgt extends StatementMgt{
 				accessLog.setDomainId(set.getInt("domainId"));
 				accessLog.setChannelId(set.getInt("channelId"));
 				accessLog.setAdId(set.getInt("adId"));
-				accessLog.setEntranceType(set.getInt("entranceType"));
+//				accessLog.setEntranceType(set.getInt("entranceType"));
 				accessLog.setIpAddress(set.getString("ipAddress"));
 				accessLog.setRegion(set.getString("region"));
 				accessLog.setUuid(set.getString("uuid"));

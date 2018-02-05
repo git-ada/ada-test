@@ -21,8 +21,8 @@ public class AccessLog implements java.io.Serializable{
 	@Column("adId")
 	private Integer adId;
 
-	@Column("entranceType")
-	private Integer entranceType;
+//	@Column("entranceType")
+//	private Integer entranceType;
 
 	@Column("ipAddress")
 	private String ipAddress;
@@ -244,18 +244,18 @@ public class AccessLog implements java.io.Serializable{
 		return todayTime !=null;
 	}
 
-	public Integer getEntranceType() {
-		return entranceType;
-	}
-
-	public void setEntranceType(Integer entranceType) {
-		this.entranceType = entranceType;
-	}
+//	public Integer getEntranceType() {
+//		return entranceType;
+//	}
+//
+//	public void setEntranceType(Integer entranceType) {
+//		this.entranceType = entranceType;
+//	}
 
 	@Override
 	public String toString() {
 		return "AccessLog [id=" + id + ", siteId=" + siteId + ", domainId=" + domainId + ", channelId=" + channelId
-				+ ", adId=" + adId + ", entranceType=" + entranceType + ", ipAddress=" + ipAddress + ", region="
+				+ ", adId=" + adId + ", entranceType=" + null + ", ipAddress=" + ipAddress + ", region="
 				+ region + ", uuid=" + uuid + ", url=" + url + ", useragent=" + useragent + ", os=" + os + ", browser="
 				+ browser + ", screenSize=" + screenSize + ", pageSize=" + pageSize + ", referer=" + referer
 				+ ", iframe=" + iframe + ", firstTime=" + firstTime + ", todayTime=" + todayTime + ", requestTime="

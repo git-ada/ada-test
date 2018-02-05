@@ -116,7 +116,7 @@ public class BatchInsertTestCase implements TestCase {
 		t.setDomainId(random.nextInt(maxDomianId));
 		t.setChannelId(random.nextInt(maxChannelId));
 		t.setAdId(random.nextInt(maxAdId));
-		t.setEntranceType(1);
+//		t.setEntranceType(1);
 		t.setIpAddress(IPv4.toString(random.nextInt(maxIp)));
 		t.setRegion("地区编号"+random.nextInt(maxRegion));
 		t.setUuid(String.valueOf(random.nextInt(maxUuid)));
