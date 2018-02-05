@@ -89,8 +89,8 @@ public class BatchInsertTestCase implements TestCase {
 	private void init(){
 		AccessLogDaoImp impl = new AccessLogDaoImp();
 //		impl.set_host("qgs-14,qgs-17,qgs-18,qgs-19,qgs-20");
-//		impl.set_host("39.108.149.199,39.108.160.35,39.108.92.191");
-		impl.set_host("119.23.51.182,119.23.215.11,120.77.86.65");
+		impl.set_host("39.108.149.199,39.108.160.35,39.108.92.191");
+//		impl.set_host("119.23.51.182,119.23.215.11,120.77.86.65");
 		
 		impl.set_port("2181");
 		dao = impl;
