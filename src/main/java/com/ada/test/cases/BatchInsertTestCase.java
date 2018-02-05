@@ -27,7 +27,7 @@ public class BatchInsertTestCase implements TestCase {
 	
 	private final static Log logger = LogFactory.getLog(BatchInsertTestCase.class);
 	
-	private Integer batchSize    = 10000;
+	private Integer batchSize    = 1000;
 	private Integer maxSiteId =    10000;
 	private Integer maxAdId =      100000;
 	private Integer maxDomianId =  1000000;
@@ -53,8 +53,8 @@ public class BatchInsertTestCase implements TestCase {
 	private static Timer timer = new Timer();
 	
 	public static void main(String[] args){
-//		BatchInsertTestCase.start();
-		System.out.println(new BatchInsertTestCase().randomInstance());
+		BatchInsertTestCase.start();
+//		System.out.println(new BatchInsertTestCase().randomInstance());
 	}
 	
 	public static void start() {
