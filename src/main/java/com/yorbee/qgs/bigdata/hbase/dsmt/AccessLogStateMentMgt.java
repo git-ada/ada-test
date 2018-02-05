@@ -1159,10 +1159,11 @@ public class AccessLogStateMentMgt extends StatementMgt{
             
 		} catch (SQLException e) {
 			e.printStackTrace();
-			logger.info("SQL执行出错：" + e.getMessage());
+//			logger.info("SQL执行出错：" + e.getMessage());
+			logger.error("出错：" + e.getMessage(),e);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.info("出错：" + e.getMessage());
+			logger.error("出错：" + e.getMessage(),e);
 		}finally{
 			try {
 				stmt.close();
