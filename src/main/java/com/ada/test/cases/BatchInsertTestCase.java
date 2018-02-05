@@ -27,7 +27,7 @@ public class BatchInsertTestCase implements TestCase {
 	
 	private final static Log logger = LogFactory.getLog(BatchInsertTestCase.class);
 	
-	private Integer batchSize    = 10000;
+	private Integer batchSize    = 1000;
 	private Integer maxSiteId =    10000;
 	private Integer maxAdId =      100000;
 	private Integer maxDomianId =  1000000;
@@ -89,12 +89,11 @@ public class BatchInsertTestCase implements TestCase {
 	
 	private void init(){
 		AccessLogDaoImp impl = new AccessLogDaoImp();
-		impl.set_host("qgs-14,qgs-17,qgs-18,qgs-19,qgs-20");
+//		impl.set_host("qgs-14,qgs-17,qgs-18,qgs-19,qgs-20");
 //		impl.set_host("39.108.149.199,39.108.160.35,39.108.92.191");
 //		impl.set_host("119.23.51.182,119.23.215.11,120.77.86.65");
 //		impl.set_host("39.108.0.161,39.108.79.43,120.77.253.191");
-		
-//		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157");
+		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157");
 		impl.set_port("2181");
 		dao = impl;
 		
