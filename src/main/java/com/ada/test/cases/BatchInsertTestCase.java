@@ -84,6 +84,7 @@ public class BatchInsertTestCase implements TestCase {
 	
 	public static void stop(){
 		timer.cancel();
+		testing = false;
 	}
 	
 	private void init(){
