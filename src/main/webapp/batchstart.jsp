@@ -1,6 +1,11 @@
 <%@page import="com.ada.test.cases.BatchInsertTestCase"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+    String host = request.getParameter("host");
+    String batchSize = request.getParameter("batchSize");
+    
+    BatchInsertTestCase.host = host;
+    BatchInsertTestCase.batchSize = Integer.valueOf(batchSize);
 	BatchInsertTestCase.start();
 %>
 <h1>测试进行中...</h1>

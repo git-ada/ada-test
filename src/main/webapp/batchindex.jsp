@@ -22,6 +22,8 @@ body,button,input{
 	<br/>
 	<br/>
 	<form action="batchstart.jsp">
+		主机 <input name="host" >
+		批大小 <input name="batchSize" >
 		<button type="submit">开始</button>
 	</form>
 <%}%>

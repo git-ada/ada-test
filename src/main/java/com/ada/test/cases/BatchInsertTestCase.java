@@ -27,15 +27,16 @@ public class BatchInsertTestCase implements TestCase {
 	
 	private final static Log logger = LogFactory.getLog(BatchInsertTestCase.class);
 	
-	private Integer batchSize    = 1000;
-	private Integer maxSiteId =    10000;
-	private Integer maxAdId =      100000;
-	private Integer maxDomianId =  1000000;
-	private Integer maxChannelId = 10000000;
-	private Integer maxRegion =    2000;
-	private Integer maxIp =        10000000;
-	private Integer maxUuid =      12000000;
-	private Integer maxUrl =       1000000;
+	public static String host = "";
+	public static Integer batchSize    = 1000;
+	public static Integer maxSiteId =    10000;
+	public static Integer maxAdId =      100000;
+	public static Integer maxDomianId =  1000000;
+	public static Integer maxChannelId = 10000000;
+	public static Integer maxRegion =    2000;
+	public static Integer maxIp =        10000000;
+	public static Integer maxUuid =      12000000;
+	public static Integer maxUrl =       1000000;
 	
 	private Random random = new Random();
 	private AccessLogDao dao;
@@ -61,6 +62,8 @@ public class BatchInsertTestCase implements TestCase {
 		logger.info("start");
 		if(!testing){
 			testing = true;
+			counter = new Counter();
+			total = new AtomicInteger();
 			counter.setStartTime(new Timestamp(System.currentTimeMillis()));
 			timer = new Timer();
 			timer.schedule(new TimerTask() {
@@ -93,7 +96,8 @@ public class BatchInsertTestCase implements TestCase {
 //		impl.set_host("39.108.149.199,39.108.160.35,39.108.92.191");
 //		impl.set_host("119.23.51.182,119.23.215.11,120.77.86.65");
 //		impl.set_host("39.108.0.161,39.108.79.43,120.77.253.191");
-		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157");
+//		impl.set_host("39.108.170.178,39.108.63.28,39.108.185.157");
+		impl.set_host(host);
 		impl.set_port("2181");
 		dao = impl;
 		
